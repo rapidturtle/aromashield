@@ -3,6 +3,7 @@ version: '3.7'
 services:
   magento:
     depends_on:
+      - elasticsearch
       - mariadb
     environment:
       - MARIADB_HOST=mariadb
@@ -30,3 +31,8 @@ services:
     image: bitnami/mariadb:latest
     volumes:
       - ./tmp/data/mariadb:/bitnami
+
+  elasticsearch:
+    image: bitnami/elasticsearch:latest
+    volumes:
+      - ./tmp/data/elasticsearch:/bitnami/elasticsearch/data
