@@ -6,6 +6,8 @@ services:
       - elasticsearch
       - mariadb
     environment:
+      - ELASTICSEARCH_HOST=elasticsearch
+      - ELASTICSEARCH_PORT_NUMBER=9200
       - MARIADB_HOST=mariadb
       - MARIADB_PORT_NUMBER=3306
       - MAGENTO_USERNAME=admin
@@ -29,6 +31,8 @@ services:
       - MARIADB_PASSWORD=your_password
       - MARIADB_DATABASE=bitnami_magento
     image: bitnami/mariadb:latest
+    ports:
+      - 3306:3306
     volumes:
       - ./tmp/data/mariadb:/bitnami
 
