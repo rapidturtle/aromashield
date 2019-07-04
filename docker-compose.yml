@@ -12,18 +12,18 @@ services:
       - MAGENTO_DATABASE_PASSWORD=your_password
       - MAGENTO_DATABASE_USER=bn_magento
       - MAGENTO_EMAIL=admin@example.com
-      - MAGENTO_HOST=magento
+      - MAGENTO_HOST=aromashield.localhost
       - MAGENTO_MODE=developer
       - MAGENTO_PASSWORD=password1
       - MAGENTO_USERNAME=admin
       - MARIADB_HOST=mariadb
       - MARIADB_PORT_NUMBER=3306
     image: bitnami/magento:latest
-    ports:
-      - '80:80'
-      - '443:443'
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.frontend.rule=Host:aromashield.localhost'
     volumes:
-      - ./tmp/data/magento:/bitnami
+      - ./src:/bitnami
 
   mariadb:
     environment:
@@ -41,3 +41,16 @@ services:
     image: bitnami/elasticsearch:latest
     volumes:
       - ./tmp/data/elasticsearch:/bitnami/elasticsearch/data
+
+  proxy:
+    command: --api --docker
+    image: traefik:latest
+    ports:
+      - '80:80'
+      - '443:443'
+      - '8080:8080'
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./config/proxy/traefik.toml:/etc/traefik/traefik.toml
+      - ./config/proxy/ssl/docker.crt:/etc/ssl/docker.crt
+      - ./config/proxy/ssl/docker.key:/etc/ssl/docker.key
