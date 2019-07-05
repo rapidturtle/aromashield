@@ -38,7 +38,7 @@ services:
       - ./tmp/data/mariadb:/bitnami
 
   elasticsearch:
-    image: bitnami/elasticsearch:latest
+    image: bitnami/elasticsearch:6
     volumes:
       - ./tmp/data/elasticsearch:/bitnami/elasticsearch/data
 

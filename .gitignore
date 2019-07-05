@@ -41,6 +41,8 @@
 # /var/package/*
 # !/var/package/*.xml
 
+.restored
+
 /src/magento/htdocs/pub/media/*
 !/src/magento/htdocs/pub/media/.htaccess
 /src/magento/htdocs/pub/static/*
