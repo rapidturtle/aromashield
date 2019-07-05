@@ -2,43 +2,51 @@
 # Magento Default Files    #
 #--------------------------#
 
-/src/magento/htdocs/app/etc/local.xml
+# /app/etc/local.xml
 
-/src/magento/htdocs/media/*
-!/src/magento/htdocs/media/.htaccess
+# /media/*
+# !/media/.htaccess
 
-!/src/magento/htdocs/media/customer
-/src/magento/htdocs/media/customer/*
-!/src/magento/htdocs/media/customer/.htaccess
+# !/media/customer
+# /media/customer/*
+# !/media/customer/.htaccess
 
-!/src/magento/htdocs/media/dhl
-/src/magento/htdocs/media/dhl/*
-!/src/magento/htdocs/media/dhl/logo.jpg
+# !/media/dhl
+# /media/dhl/*
+# !/media/dhl/logo.jpg
 
-!/src/magento/htdocs/media/downloadable
-/src/magento/htdocs/media/downloadable/*
-!/src/magento/htdocs/media/downloadable/.htaccess
+# !/media/downloadable
+# /media/downloadable/*
+# !/media/downloadable/.htaccess
 
-!/src/magento/htdocs/media/xmlconnect
-/src/magento/htdocs/media/xmlconnect/*
+# !/media/xmlconnect
+# /media/xmlconnect/*
 
-!/src/magento/htdocs/media/xmlconnect/custom
-/src/magento/htdocs/media/xmlconnect/custom/*
-!/src/magento/htdocs/media/xmlconnect/custom/ok.gif
+# !/media/xmlconnect/custom
+# /media/xmlconnect/custom/*
+# !/media/xmlconnect/custom/ok.gif
 
-!/src/magento/htdocs/media/xmlconnect/original
-/src/magento/htdocs/media/xmlconnect/original/*
-!/src/magento/htdocs/media/xmlconnect/original/ok.gif
+# !/media/xmlconnect/original
+# /media/xmlconnect/original/*
+# !/media/xmlconnect/original/ok.gif
 
-!/src/magento/htdocs/media/xmlconnect/system
-/src/magento/htdocs/media/xmlconnect/system/*
-!/src/magento/htdocs/media/xmlconnect/system/ok.gif
+# !/media/xmlconnect/system
+# /media/xmlconnect/system/*
+# !/media/xmlconnect/system/ok.gif
 
+# /var/*
+# !/var/.htaccess
+
+# !/var/package
+# /var/package/*
+# !/var/package/*.xml
+
+!/src/magento/.initialized
+!/src/magento/htdocs/**/.htaccess
+
+/src/magento/htdocs/pub/*
 /src/magento/htdocs/var/*
-!/src/magento/htdocs/var/.htaccess
 
-!/src/magento/htdocs/var/package
-/src/magento/htdocs/var/package/*
-!/src/magento/htdocs/var/package/*.xml
+/tmp/*
 
 docker-compose.*.yml
