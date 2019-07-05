@@ -41,8 +41,9 @@
 # /var/package/*
 # !/var/package/*.xml
 
-/src/magento/htdocs/pub/*
+/src/magento/htdocs/pub/media/*
 !/src/magento/htdocs/pub/media/.htaccess
+/src/magento/htdocs/pub/static/*
 !/src/magento/htdocs/pub/static/.htaccess
 /src/magento/htdocs/var/*
 !/src/magento/htdocs/var/.htaccess
