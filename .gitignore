@@ -41,11 +41,11 @@
 # /var/package/*
 # !/var/package/*.xml
 
-!/src/magento/.initialized
-!/src/magento/htdocs/**/.htaccess
-
 /src/magento/htdocs/pub/*
 /src/magento/htdocs/var/*
+
+!/src/magento/.initialized
+!/src/magento/htdocs/**/.htaccess
 
 /tmp/*
 
