@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+  <body>
+    <referenceBlock name="page.main.subtitle">
+      <arguments>
+        <argument name="css_class" xsi:type="string">product</argument>
+        <argument name="add_base_attribute" xsi:type="string">itemprop="latin_name"</argument>
+      </arguments>
+    </referenceBlock>
+
+    <referenceBlock name="product.info.details">
+      <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.as_uses" template="product/view/attribute.phtml" group="detailed_info">
+        <arguments>
+          <argument name="at_call" xsi:type="string">getAsUses</argument>
+          <argument name="at_code" xsi:type="string">as_uses</argument>
+          <argument name="css_class" xsi:type="string">as_uses</argument>
+          <argument name="at_label" xsi:type="string">none</argument>
+          <argument name="title" translate="true" xsi:type="string">Common Uses</argument>
+          <argument name="sort_order" xsi:type="string">21</argument>
+        </arguments>
+      </block>
+
+      <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.as_warnings" template="product/view/attribute.phtml" group="detailed_info">
+        <arguments>
+          <argument name="at_call" xsi:type="string">getAsWarnings</argument>
+          <argument name="at_code" xsi:type="string">as_warnings</argument>
+          <argument name="css_class" xsi:type="string">as_warnings</argument>
+          <argument name="at_label" xsi:type="string">none</argument>
+          <argument name="title" translate="true" xsi:type="string">Precautions</argument>
+          <argument name="sort_order" xsi:type="string">22</argument>
+        </arguments>
+      </block>
+    </referenceBlock>
+  </body>
+</page>
