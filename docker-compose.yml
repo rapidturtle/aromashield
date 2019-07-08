@@ -5,6 +5,7 @@ services:
     depends_on:
       - elasticsearch
       - mariadb
+      - proxy
     environment:
       - ELASTICSEARCH_HOST=elasticsearch
       - ELASTICSEARCH_PORT_NUMBER=9200
@@ -23,7 +24,7 @@ services:
       - 'traefik.enable=true'
       - 'traefik.frontend.rule=Host:aromashield.localhost'
     volumes:
-      - ./src:/bitnami
+      - ./src:/bitnami/magento/htdocs
 
   mariadb:
     environment:
@@ -34,11 +35,13 @@ services:
     image: bitnami/mariadb:latest
     ports:
       - 3306:3306
+    restart: always
     volumes:
       - ./tmp/data/mariadb:/bitnami
 
   elasticsearch:
     image: bitnami/elasticsearch:6
+    restart: always
     volumes:
       - ./tmp/data/elasticsearch:/bitnami/elasticsearch/data
 
@@ -49,6 +52,7 @@ services:
       - '80:80'
       - '443:443'
       - '8080:8080'
+    restart: always
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./config/proxy/traefik.toml:/etc/traefik/traefik.toml
