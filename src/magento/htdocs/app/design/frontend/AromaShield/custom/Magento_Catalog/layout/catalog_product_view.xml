@@ -1,11 +1,14 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
   <body>
-    <referenceBlock name="page.main.subtitle">
-      <arguments>
-        <argument name="css_class" xsi:type="string">product</argument>
-        <argument name="add_base_attribute" xsi:type="string">itemprop="latin_name"</argument>
-      </arguments>
+    <referenceBlock name="page.main.title">
+      <block class="Magento\Catalog\Block\Product\View" name="product.info.as_latin_name" template="product/view/attribute.phtml">
+        <arguments>
+          <argument name="at_call" xsi:type="string">getAsLatinName</argument>
+          <argument name="at_code" xsi:type="string">as_latin_name</argument>
+          <argument name="css_class" xsi:type="string">as_latin_name</argument>
+        </arguments>
+      </block>
     </referenceBlock>
 
     <referenceBlock name="product.info.details">
